@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo"
+        xmlns:hc="https://handyorg.github.io/handycontrol" 
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Text="{Binding Title}" Style="{StaticResource TextBlockLargeBold}"></TextBlock>
+        <TextBox Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"  hc:InfoElement.Placeholder="请输入内容，下方将显示预览" Style="{StaticResource TextBoxExtend}"/>
+        <TextBlock Text="{Binding InputText}" Style="{StaticResource TextBlockDefault}"></TextBlock>
+    </StackPanel>
 </Window>
