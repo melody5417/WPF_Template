@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:o="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--命名规则采用**类型+描述**，类型在前的目标是方便智能补全-->
+
+    <!-- Color全局定义 命名规则 Color+Hex -->
+    <Color x:Key="Color58C2DB">#58C2DB</Color>
+    <Color x:Key="ColorEAF4F6">#EAF4F6</Color>
+
+    <!-- Brush全局定义 命名规则 Brush+描述 -->
+    <SolidColorBrush o:Freeze="True" x:Key="BrushBackground" Color="{StaticResource Color58C2DB}"/>
+    <SolidColorBrush o:Freeze="True" x:Key="BrushPanel" Color="{StaticResource ColorEAF4F6}"/>
+
+    <!-- FontSize全局定义 命名规则 FontSize+描述 -->
+    <system:Double x:Key="FontSizeLarge">24</system:Double>
+
+    <!-- Style全局定义 命名规则 Target+描述 -->
+    <Style x:Key="BorderMainPanel" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource BrushBackground}" />
+    </Style>
+    <Style x:Key="BorderSubPanel" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource BrushPanel}" />
+        <Setter Property="CornerRadius" Value="10"/>
+    </Style>
+
+</ResourceDictionary>
